@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap");
+/* global rules*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+::selection {
+  background-color: #033038;
+  color: #fff;
+}
+::-webkit-scrollbar {
+  height: 70%;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#033038, #fff);
+  height: 10px;
+  border-radius: 50px;
+}
+body {
+  font-family: "Chakra Petch", sans-serif;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #09a16f, #034e5c);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+button.special {
+  z-index: 2;
+  position: relative;
+  left: 200px;
+  background-color: #fff;
+  width: 90px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button.special::before {
+  content: "";
+  z-index: -1;
+  background-image: linear-gradient(#44d1a2 50%, #034e5c 50% 100%);
+  position: absolute;
+  width: 10px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear 0s infinite running;
+}
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+button.special::after {
+  content: "clear";
+  background-color: #fff;
+  color: #033038;
+  font-size: 16px;
+  font-weight: 700;
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.special:hover::after {
+  background-color: #033038;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------*/
+
+#particles-js {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  z-index: 2;
+  color: #fff;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  z-index: 2;
+  width: 300px;
+  height: 35px;
+  outline: none;
+  border: 2px solid #033038;
+  border-radius: 50px;
+  padding: 0 15px;
+  font-size: 18px;
+}
+
+button.add {
+  z-index: 2;
+  margin: 10px 0;
+  cursor: pointer;
+  left: 0px;
+  background-color: #033038;
+}
+button.add::before {
+  background-image: linear-gradient(#44d1a2 50%, #fff 50% 100%);
+}
+button.add::after {
+  content: "add";
+  background-color: #033038;
+  color: #fff;
+}
+button.add:hover::after {
+  background-color: #fff;
+  color: #033038;
+}
+
+section {
+  z-index: 2;
+  background-color: #fff;
+  padding: 10px;
+  padding-left: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+section div {
+  background-color: #ddd;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  display: flex;
+}
+section div:hover {
+  background-color: #d6d6d6;
+}
+section div span {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #034e5c;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  cursor: pointer;
+}
+section div span::after {
+  content: "\2714";
+  color: #033038;
+  opacity: 0;
+  transition: 0.4s;
+}
+section div span.check::after {
+  opacity: 1;
+}
+section div span:hover{
+  border: none;
+  box-shadow: inset 0px 0px 5px #033038;
+}
+section div span:hover::after {
+  opacity: 0.4;
+}
+
+
+section div label {
+  flex: 15;
+  font-size: 16px;
+  color: #033038;
+  font-weight: 500;
+}
+
+span.check ~ label {
+  text-decoration: line-through #034e5c solid;
+}
+
+section div button {
+  background-color: #b92e2e;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
+}
+section div button:hover {
+  background-color: #992929;
+  transform: scale(0.9);
+}
+section div button::before {
+  content: "";
+  width: 2px;
+  height: 70%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.4s;
+}
+section div button::after {
+  content: "";
+  width: 2px;
+  height: 70%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: 0.4s;
+}
+section div button:hover::before {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+section div button:hover::after {
+  transform: translate(-50%, -50%) rotate(-225deg);
+}
+
+.desc {
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  user-select: auto;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  section {
+    width: calc(100% - 20px);
+    height: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  button.add {
+    margin-top: 20px;
+    width: 150px;
+  }
+  button.clear {
+    left: 0;
+  }
+  .desc {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
